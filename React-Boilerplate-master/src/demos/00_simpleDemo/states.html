@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>States</title>
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+</head>
+<body>
+
+    <div id="states"></div>
+
+    <script type="text/babel">
+
+        var CheckBox=React.createClass({
+
+            getInitialState:function () {
+                return {checked:true}
+            },
+            handle:function () {
+                this.setState({checked:!this.state.checked})
+
+            },
+
+                render:function(){
+
+                var msg;
+                var pizza;
+                if(this.state.checked){
+                    msg='checked'
+                    pizza='I want pizza'
+                }
+                else{
+                    msg='unchecked'
+                    pizza='I hate pizza,Im strange'
+                }
+                return(
+                    <div>
+
+                        <input type="checkbox" onChange={this.handle}  defaultChecked={this.state.checked}/>
+
+                        <h3>Checkbox is {msg}</h3>
+                        <h3>{pizza}</h3>
+
+                    </div>
+                )
+            }
+        });
+
+
+
+        ReactDOM.render(<CheckBox/> ,document.getElementById('states'));
+    </script>
+
+</body>
+</html>

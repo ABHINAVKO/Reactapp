@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Props</title>
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+</head>
+<body>
+
+    <div id="app"></div>
+
+    <script type="text/babel">
+
+            var Movie=React.createClass({
+
+                render:function () {
+
+                    return (
+                        <div>
+                            <h1>{this.props.title}</h1>
+                            <h2>{this.props.Date}</h2>
+                            <h3>{this.props.Genre}</h3>
+                        </div>
+                    );
+
+                }
+            });
+
+        ReactDOM.render(<div>
+            <Movie title="Iron Man" Date="2008" Genre="Action"/>
+            <Movie title="Captain America:Winter Soldier" Date="2014" Genre="Action"/>
+            <Movie title="Thor Ragnarok" Date="2017" Genre="Action"/>
+             </div>,
+            document.getElementById('app'));
+    </script>
+
+</body>
+</html>

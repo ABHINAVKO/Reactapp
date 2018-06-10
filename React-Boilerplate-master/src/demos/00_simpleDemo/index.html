@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple Demo</title>
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script type="text/babel">
+
+
+        var Value=React.createClass({
+
+           render:function () {
+               return(
+                   <div>
+                   <h3> Flash</h3>
+                    <p> I am Barry Allen, and I am the fastest man alive</p>
+                   </div>
+               );
+           }
+        });
+
+
+
+        ReactDOM.render(<div>
+            <Value/>
+            <Value/>
+            <Value/>
+        </div> ,document.getElementById('container'));
+    </script>
+
+</body>
+</html>
